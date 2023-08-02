@@ -26,5 +26,7 @@
 .icon-toggle {
     color: white;
 }
-
+.b-bottom-width {
+    border-bottom-width: 1px;
+}
 

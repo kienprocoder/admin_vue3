@@ -10,7 +10,7 @@
                   icon="mug-hot" 
                   class="text-white text-2xl rounded block float-left mr-6"/>
                 <h1 :class="isOpen && 'scale-0'" 
-                  class="text-white origin-left font-medium text-2xl">KienMall</h1>
+                  class="text-white origin-left font-medium text-2xl"></h1>
               </div>
 
               <!-- Menu -->
@@ -18,43 +18,47 @@
                     :class="isOpen ? 'px-2.5' : 'px-4' "
               > -->
               <ul class="pt-2 mt-6">
+                <router-link to="/">
+                  <li class="text-gray-300 text-sm gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md mt-2" style="display: flex; margin: 0px">
+                    <span>
+                      <font-awesome-icon class="fs-2" icon="gauge" />
+                    </span>
+                    <span :class="isOpen && 'hidden'">Dashboard</span>
+                  </li>
+                </router-link>
+                <router-link to="/product">
+                  <li class="text-gray-300 text-sm gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md mt-2" style="display: flex; margin: 0px">
+                      <span>
+                        <font-awesome-icon class="fs-2" icon="gauge" />
+                      </span>
+                      <span :class="isOpen && 'hidden'">Product</span>
+                  </li>
+              </router-link>
+              <router-link to="/user">
                 <li class="text-gray-300 text-sm gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md mt-2" style="display: flex; margin: 0px">
                   <span>
                     <font-awesome-icon class="fs-2" icon="gauge" />
                   </span>
-                  <span :class="isOpen && 'hidden'">Dashboard</span>
+                  <span :class="isOpen && 'hidden'">User</span>
                 </li>
-                <li class="text-gray-300 text-sm items-center gap-x-4 cursor-pointer p-2" style="display: flex; margin: 0px">
+              </router-link>
+              <router-link to="/report">
+                <li class="text-gray-300 text-sm gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md mt-2" style="display: flex; margin: 0px">
                   <span>
                     <font-awesome-icon class="fs-2" icon="gauge" />
                   </span>
-                  <span :class="isOpen && 'hidden'">Dashboard</span>
-                </li>
-                <li class="text-gray-300 text-sm items-center gap-x-4 cursor-pointer p-2" style="display: flex; margin: 0px">
-                  <span>
-                    <font-awesome-icon class="fs-2" icon="gauge" />
-                  </span>
-                  <span :class="isOpen && 'hidden'">Dashboard</span>
-                </li>
-                <li class="text-gray-300 text-sm items-center gap-x-4 cursor-pointer p-2" style="display: flex; margin: 0px">
-                  <span>
-                    <font-awesome-icon class="fs-2" icon="gauge" />
-                  </span>
-                  <span :class="isOpen && 'hidden'">Dashboard</span>
+                  <span :class="isOpen && 'hidden'">Report</span>
                   <font-awesome-icon icon="chevron-right" class="rounded-full absolute r-10 cursor-pointer" />
                 </li>
-                <li class="text-gray-300 text-sm items-center gap-x-4 cursor-pointer p-2" style="display: flex; margin: 0px">
+              </router-link>
+              <router-link to="/setting">
+                <li class="text-gray-300 text-sm gap-x-4 cursor-pointer p-2 hover:bg-light-white rounded-md mt-2" style="display: flex; margin: 0px">
                   <span>
                     <font-awesome-icon class="fs-2" icon="gauge" />
                   </span>
-                  <span :class="isOpen && 'hidden'">Dashboard</span>
+                  <span :class="isOpen && 'hidden'">Settings</span>
                 </li>
-                <li class="text-gray-300 text-sm items-center gap-x-4 cursor-pointer p-2" style="display: flex; margin: 0px">
-                  <span>
-                    <font-awesome-icon class="fs-2" icon="gauge" />
-                  </span>
-                  <span :class="isOpen && 'hidden'">Dashboard</span>
-                </li>
+              </router-link>
               </ul>
 
               <!-- </div> -->
@@ -81,8 +85,8 @@
             <div class="flex items-center justify-start space-x-4" @click="toggleDrop">
               <img class="w-10 h-10 rounded-full border-2 border-gray-50" src="https://yt3.ggpht.com/hqsxh-Vnbw9OK0_X4DAWh6RkmEUVnL-82SRCyh-IKr9fIXR8zhUCRdBEwgWWL_14q_L8Piod=s108-c-k-c0x00ffffff-no-rj" alt="">
               <div class="font-semibold dark:text-white text-left">
-                <div>Madona ,Dev OP</div>
-                <div class="text-xs text-gray-500 dark:text-gray-400">Admin</div>
+                <div>Admin</div>
+                <!-- <div class="text-xs text-gray-500 dark:text-gray-400">Admin</div> -->
               </div>
             </div>
             <!-- Drop down -->
@@ -100,8 +104,8 @@
           </div>
         </div>
       </div>
-      <div class="h-[calc(100vh-50px)] bg-gray-50 p-[20px]">
-        <div class="border border-gray-300 rounded-md p-[20px] h-full">
+      <div class="h-[calc(100vh-50px)] bg-gray-300 p-[20px] px-4 py-4" style="overflow: auto;">
+        <div class="rounded-md p-[20px] h-full mb-4 py-4">
           <router-view></router-view>
         </div>
       </div>
